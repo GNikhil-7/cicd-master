@@ -37,8 +37,8 @@ jobs:
 
       # 6. Build Docker image
       - name: Build Docker Image
-        run: docker build -t ng0207/cicd-demo .
+        run: docker build -t ng0207/cicd-demo:latest .
 
       # 7. Push to Docker Hub
       - name: Push Docker Image
-        run: docker push ng0207/cicd-demo
+        run: docker push ng0207/cicd-demo:latest
