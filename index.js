@@ -2,13 +2,15 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const app = require("./app");
 
+const PORT = process.env.PORT || 3000;
+
 // DB connect
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected ✅");
 
-    app.listen(3000, () => {
-      console.log("Server running on port 3000");
+    app.listen(PORT, () => {
+      console.log(`Server running on port ${PORT}`);
     });
   })
   .catch((err) => {
